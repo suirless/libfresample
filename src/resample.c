@@ -13,10 +13,9 @@ lfr_resample(
     const struct lfr_filter *filter)
 {
     lfr_resample_func_t func;
-    if (outfmt == LFR_FMT_S16_NATIVE && infmt == LFR_FMT_S16_NATIVE) {
-        func = lfr_resample_s16func(nchan, filter);
-        if (!func)
-            return;
-        func(pos, inv_ratio, dither, out, outlen, in, inlen, filter);
-    }
+    func = lfr_resample_s16func(nchan, filter);
+    if (!func)
+        return;
+    
+    func(pos, inv_ratio, dither, out, outlen, in, inlen, filter);
 }
