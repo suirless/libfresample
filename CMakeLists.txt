@@ -1,5 +1,6 @@
 #*********************************************************************
-# Copyright (C) Suirless, 2018-2020. All rights reserved.
+# Copyright (C) Dietrich Epp, 2012. All rights reserved.
+# Copyright (C) Suirless, 2018-2021. All rights reserved.
 # libfresample
 # BSD-2 License
 #****************************************************************/
