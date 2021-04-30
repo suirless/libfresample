@@ -5,7 +5,7 @@
 # BSD-2 License
 #****************************************************************/
 
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.8)
 project(fresample C CXX)
 
 set(BUILD_STAFF 1)
