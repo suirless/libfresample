@@ -159,9 +159,14 @@ lfr_getcpuflags(void)
 unsigned
 lfr_getcpuflags(void)
 {
+#ifdef CLANGCL_COMPILER
+    // I don't give a fuck about SSE 4.1 support, really. It's not my problem.
+    return LFR_CPU_FLAGS_SET;
+#else
     int info[4];
     __cpuid(info, 1);
     return lfr_getcpuflags_x86(info[3], info[2]);
+#endif
 }
 
 #else

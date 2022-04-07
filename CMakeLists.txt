@@ -19,6 +19,12 @@ file(GLOB FRESAMPLE_SRC
     "${CMAKE_CURRENT_SOURCE_DIR}/src/*.h"
 )
 
+if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang" AND WIN32)
+	set(FRESAMPLE_USE_CLANG_CL ON)
+else()
+	set(FRESAMPLE_USE_CLANG_CL OFF)
+endif()
+
 if (FRESAMPLE_STATIC)
     add_library(fresample STATIC ${FRESAMPLE_SRC})
 else()
@@ -26,3 +32,4 @@ else()
 endif()
 
 target_include_directories(fresample PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_compile_definitions(fresample PRIVATE CLANGCL_COMPILER)
